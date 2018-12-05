@@ -11,7 +11,7 @@ def func_rec(num,x,n):
     if abs(res - num) < 0.001:
         return num
     else:
-        return num + func(res,x,n+1)
+        return num + func_rec(res,x,n+1)
 
 
 def func(x):
@@ -32,4 +32,4 @@ def func(x):
 
 
 if __name__ == '__main__':
-    print(rec_func(start, 2, n))
+    print(func_rec(start, 2, n))
