@@ -1,3 +1,19 @@
+start = 1
+n = 1
+
+def func_rec(num,x,n):
+    if x < 0 or x > 4:
+        raise Exception('x не входит в одз')
+    
+    res = num * (-1 * pow(x, 2) /
+                (2 * n * (2 * n - 1)))
+    
+    if abs(res - num) < 0.001:
+        return num
+    else:
+        return num + func(res,x,n+1)
+
+
 def func(x):
     if x < 0 or x > 4:
         raise Exception('x не входит в одз')
@@ -16,8 +32,4 @@ def func(x):
 
 
 if __name__ == '__main__':
-    print(func(1))
-    print(func(2))
-    print(func(3))
-    print(func(4))
-    print(func(5))
+    print(rec_func(start, 2, n))
